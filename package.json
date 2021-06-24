@@ -1,0 +1,20 @@
+{
+  "name": "curso-profesional",
+  "version": "1.0.0",
+  "description": "Develop of Platzi Video",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JavaScript",
+    "Plugins",
+    "PlatziVideo"
+  ],
+  "author": "Mauro Silva <silvac.mauro@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
