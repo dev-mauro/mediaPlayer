@@ -2,7 +2,10 @@ function AutoPlay() {
 }
 
 AutoPlay.prototype.run = function(player) {
-    player.toggleMute();
+    console.log("Ejecutando autorun de autoplay");
+    if(!player.muted){
+        player.muted = true;
+    }
     player.togglePlay();
 }
 
