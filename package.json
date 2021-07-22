@@ -13,5 +13,8 @@
     "PlatziVideo"
   ],
   "author": "Mauro Silva <silvac.mauro@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
 }

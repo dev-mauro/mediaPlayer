@@ -1,3 +1,7 @@
+const randNumberGenerator = (min, max) => {
+    return Math.trunc(Math.random() * (max - min) + min);
+}
+
 const Ads = {
     ALL_ADS: [
         {
@@ -20,13 +24,14 @@ const Ads = {
         }
     ],
 
-    ADS: [...ALL_ADS],
+    ADS: [],
 
     getAd: function() {
         if (this.ADS.length === 0) {
-            this.ADS = [... this.ALL_ADS]
+            this.ADS = [... this.ALL_ADS];
         }
-        return this.ADS.pop();
+        let Ad = this.ADS.splice(randNumberGenerator(0, this.ADS.length) , 1)[0];
+        return Ad;
     },
 };
 

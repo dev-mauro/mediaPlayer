@@ -2,6 +2,7 @@ import MediaPlayer from './MediaPlayer.js';
 import AutoPlay from './plugins/AutoPlay.js';
 import Loop from './plugins/Loop.js';
 import AutoPause from './plugins/AutoPause.js';
+import DisplayAds from './DisplayAds.js';
 
 const video = document.querySelector('video');
 const playButton = document.getElementById('play-button');
@@ -17,3 +18,6 @@ if ('serviceWorker' in navigator) {
         console.log(error.message);
     });
 }
+
+const Ads = new DisplayAds();
+Ads.init();
