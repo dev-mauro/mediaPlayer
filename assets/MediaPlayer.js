@@ -1,39 +1,32 @@
-function MediaPlayer(config) {
-    this.media = config.el;
-    this.plugins = config.plugins || [];
+class MediaPlayer {
+    constructor(config) {
+        this.media = config.el;
+        this.plugins = config.plugins || [];
 
-    this._initPlugins();
-}
+        this._initContainer();
+        this._initPlugins();
+    }
 
-MediaPlayer.prototype._initPlugins = function() {
-    const player = {
-        togglePlay: () => this.togglePlay(),
-        toggleMute: () => this.toggleMute(),
-        media: this.media,
+    _initContainer() {
+        this.adContainer = document.createElement("div");
+        this.media.parentNode.appendChild(this.adContainer);
+    }
 
-        get muted() {
-            return this.media.muted;
-        },
-        set muted(value) {
-            this.media.muted = value;
-        },
-    };
+    _initPlugins() {
+        this.plugins.forEach(plugin => plugin.run(this));
+    }
 
-    this.plugins.forEach(plugin => {
-        plugin.run(player);
-    });
-};
-
-MediaPlayer.prototype.togglePlay = function() {
-    (this.media.paused)
+    togglePlay() {
+        (this.media.paused)
         ? this.media.play()
         : this.media.pause();
-};
+    }
 
-MediaPlayer.prototype.toggleMute = function() {
-    (this.media.muted)
+    toggleMute() {
+        (this.media.muted)
         ? this.media.muted = false
         : this.media.muted = true;
-};
+    }
+}
 
 export default MediaPlayer;

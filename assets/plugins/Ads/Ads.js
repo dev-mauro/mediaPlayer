@@ -20,7 +20,7 @@ const Ads = {
         }
     ],
 
-    ADS: [...ALL_ADS],
+    ADS: [],
 
     getAd: function() {
         if (this.ADS.length === 0) {

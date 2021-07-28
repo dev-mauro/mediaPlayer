@@ -1,13 +1,13 @@
-function Loop() {
-}
+class Loop {
+    run(player) {
+        this.player = player;
+        this.player.media.addEventListener('ended', () => this.restartMedia(this.player));
+    }
 
-Loop.prototype.run = function(player) {
-    player.media.addEventListener('ended', () => this.restartMedia(player));
-};
-
-Loop.prototype.restartMedia = function({media, togglePlay}) {
-    media.currentTime = 0;
-    togglePlay();
+    restartMedia(player) {
+        player.media.currentTime = 0;
+        player.togglePlay();
+    }
 }
 
 export default Loop;
